@@ -38,11 +38,7 @@ CREATE TABLE formateurs (
     `id_formateur` INT PRIMARY KEY,
     `nom_formateur` VARCHAR(50),
     `prenom_formateur` VARCHAR(50),
-    `email_formateur` VARCHAR(50),
-    `mot_de_passe` VARCHAR(50),
-   `image`VARCHAR(100),
-    `categorie` VARCHAR(50),
-    `masse_horaire` INT
+    `email_formateur` VARCHAR(50)
 );
 
 -- Create table for Formation
@@ -51,6 +47,10 @@ CREATE TABLE formation (
     `titre` VARCHAR(50),
     `description` TEXT,
     `id_formateur` INT,
+    `mot_de_passe` VARCHAR(50),
+   `image`VARCHAR(100),
+    `categorie` VARCHAR(50),
+    `masse_horaire` INT,
     CONSTRAINT titre_unique UNIQUE (`titre`),
     FOREIGN KEY (`id_formateur`) REFERENCES formateurs (`id_formateur`)
 );
